@@ -1,28 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <ZhiHuIndex/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import ZhiHuIndex from './components/ZhiHuIndex'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ZhiHuIndex
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body { 
+  background-image: url("./assets//sign_bg.png");
+  width:100vh;
+  height: 100%;
 }
 </style>
