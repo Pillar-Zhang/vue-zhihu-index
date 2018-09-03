@@ -1,6 +1,8 @@
-# zhihu
+# zhihu-demo
 
-> A Vue.js project
+> 最近学习Vue，为了巩固一下知识，做了知乎的一个登陆注册的demo,目前实现了登陆注册的页面，后续会加上表单验证。
+
+![demo](./static/img/知乎登陆注册demo.gif)
 
 ## Build Setup
 
@@ -14,8 +16,4 @@ npm run dev
 # build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
