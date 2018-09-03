@@ -9,7 +9,10 @@
                 <input type="text" class="phone-input" placeholder="手机号" v-model.trim="phone">
             </div>
             <div class="phone">
-                <input type="password" class="phone-input" placeholder="密码" v-model.trim="password">
+                <input type="password" v-if="hidden" class="phone-input" placeholder="密码" v-model.trim="password">
+                <input type="text" v-else class="phone-input" placeholder="密码" v-model.trim="password">
+                <i v-if="hidden" @click="toggleHiddenPassword" class="iconfont icon-yanjing-xiexian"></i>
+                <i v-else @click="toggleHiddenPassword" class="iconfont icon-yanjing"></i>
             </div>
             <div class="code-login">
                 <a href="javascript:" class="toggle-code-login">手机验证码登陆</a>
@@ -17,11 +20,11 @@
             </div>
             <a href="javascript:" class="login-btn">登陆</a>
             <div class="register-org">
-                <a href="javascript:" class="other-login-btn">注册机构</a>
-                <span>.</span>
-                <a href="javascript:" class="other-login-btn">注册机构</a>
-                <span>.</span>
-                <a href="javascript:" class="other-login-btn">注册机构</a>
+                <a href="javascript:" class="other-login-btn">二维码登陆</a>
+                <span>·</span>
+                <a href="javascript:" class="other-login-btn">海外手机登陆</a>
+                <span>·</span>
+                <a href="javascript:" class="other-login-btn">社交账号登陆</a>
             </div>
         </form>
         <div class="bottom">
@@ -40,8 +43,14 @@ export default {
       phone:"",
       optionArray:["中国 +86","美国 +1","日本 +81"],
       selected:"中国 +86",
-      password:""
+      password:"",
+      hidden:true
     }
+  },
+  methods:{
+      toggleHiddenPassword(){
+          this.hidden=!this.hidden
+      }
   },
   props:["toggleComponent"]
 }
@@ -57,6 +66,12 @@ input{
 a{
     text-decoration:none;
     outline: none;
+}
+.icon-yanjing-xiexian,.icon-yanjing{
+    font-size: 24px;
+    color: #999;
+    float: right;
+    line-height: 48px;
 }
 a:hover, a:visited, a:link, a:active {
     color: black;
@@ -131,6 +146,8 @@ form{
     color: black;
     height: 38px;
     line-height: 38px;
+    padding-right: 10px;
+    width: calc(100% - 30px);
     font-size: 18px;
     text-align: left;
     box-sizing: border-box;
