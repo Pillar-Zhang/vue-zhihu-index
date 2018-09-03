@@ -1,5 +1,5 @@
 <template>
-  <component :is="typeName"></component>
+  <component :toggleComponent="toggleComponent" :is="typeName"></component>
 </template>
 
 <script>
@@ -8,6 +8,11 @@ export default {
   data () {
     return {
       typeName: 'Login'
+    }
+  },
+  methods:{
+    toggleComponent:function(){
+      this.typeName=this.typeName==="Login"?"Register":"Login"
     }
   },
   components:{

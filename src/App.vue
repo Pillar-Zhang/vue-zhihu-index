@@ -17,7 +17,7 @@ export default {
 
 <style>
 body { 
-  background-image: url("./assets//sign_bg.png");
+  background-image: url("./assets/sign_bg.png");
   width:100vh;
   height: 100%;
 }
